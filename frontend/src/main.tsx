@@ -6,7 +6,7 @@ import Header from './Header.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
     <Header />
+    <App />
   </StrictMode>,
 )
