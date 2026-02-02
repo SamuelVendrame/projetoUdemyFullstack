@@ -4,10 +4,12 @@ import "./index.css";
 import App from "./App.tsx";
 import Header from "./components/Header.tsx";
 import Input from "./components/Inputs.tsx";
+import Login from "./components/Login.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Header />
-    <App />
+    {/* <App /> */}
+    <Login />
   </StrictMode>,
 );
