@@ -1,9 +1,35 @@
-import Login from "../components/Login.tsx";
-import Register from "../components/Register.tsx";
+import { Children } from "react";
+import Home from "../pages/Homepage.tsx";
+import Login from "../pages/Login.tsx";
+import Register from "../pages/Register.tsx";
+import Header from "./Header.tsx";
+import Pedidos from "../pages/Pedidos.tsx";
 
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Outlet } from "react-router";
+
+const Layout = () => {
+  return (
+    <div>
+      <Header />
+      <Outlet />
+    </div>
+  );
+};
 
 export const router = createBrowserRouter([
+  {
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/pedidos",
+        element: <Pedidos />,
+      },
+    ],
+  },
   {
     path: "/login",
     element: <Login />,

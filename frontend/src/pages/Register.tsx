@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Input from "./Inputs";
+import Input from "../components/Inputs";
+import { Link } from "react-router";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -20,7 +21,9 @@ const Register = () => {
       onSubmit={handleSubmit}
     >
       <div className="flex flex-col items-center justify-center gap-2">
-        <img src="./logo.png" alt="Logo" className="mb-4 h-[100px]" />
+        <Link to="/">
+          <img src="./logo.png" alt="Logo" className="mb-4 h-[100px]" />
+        </Link>
         <Input placeholder="Nome" onChange={(e) => setName(e.target.value)} />
         <Input
           type="email"
