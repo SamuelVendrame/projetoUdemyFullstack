@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Input from "../components/Inputs";
 import { Link } from "react-router";
+import Button from "../components/Button";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -48,12 +49,11 @@ const Register = () => {
           onChange={(e) => setCEP(e.target.value)}
         />
 
-        <button className="w-full rounded-md bg-[red] py-2 text-sm">
-          Login
-        </button>
-        <button className="w-full rounded-md bg-[#dfd3ad] py-2 text-[red]">
-          Nao tenho uma conta
-        </button>
+        <Button title="Criar conta" variant={"default"} className="w-full" />
+
+        <Link to="/login" className="w-full">
+          <Button title="Ja tenho uma conta" variant={"outline"} />
+        </Link>
       </div>
     </form>
   );

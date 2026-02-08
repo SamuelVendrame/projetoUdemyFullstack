@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Input from "../components/Inputs.tsx";
 import { Link } from "react-router";
+import Button from "../components/Button.tsx";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -28,12 +29,11 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           type="password"
         />
-        <button className="w-full rounded-md bg-[red] py-2 text-sm">
-          Login
-        </button>
-        <button className="w-full rounded-md bg-[#dfd3ad] py-2 text-[red]">
-          Nao tenho uma conta
-        </button>
+
+        <Button title="Login" variant="default" />
+        <Link to="/register" className="w-full">
+          <Button title="Nao tenho uma conta" variant="outline" />
+        </Link>
       </div>
     </form>
   );
